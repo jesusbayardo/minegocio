@@ -19,7 +19,7 @@ El project esta en la branch main.
 # Ejecutar la aplicación en Docker Desktop
 
  1. Inicie docker desktop **Importante**
- 2. Dirigase al proyecto descargado de GitHub e ingrese a la carpeta raiz.
+ 2. Dirigase al proyecto descargado de GitHub e ingrese a la carpeta raíz.
  3. Abra un CMD.
  4. Ejecute el comando: **docker compose up** 
 
@@ -36,12 +36,12 @@ Espere que se levante el proyecto BACK-END y la BASE DE DATOS.
     - username=bayardo
     - password=12345
     - grant_type=password
-  - Luego precione en **Send** para obtener el TOKEN.
+  - Luego presione en **Send** para obtener el TOKEN.
 
 
 
 # Petición POST cliente
-Para iniciar una petición **POST** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pege el token obtenido anteriormente.  Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+Para iniciar una petición **POST** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
   - Curl: http://localhost:8080/api/cliente
    **BODY JSON**
 
@@ -58,14 +58,14 @@ Para iniciar una petición **POST** dirigase en Postman a la pestaña **Authoriz
 
 
 # Petición GET cliente
-Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
 1. Busqueda por número de identidad: {identificacion} reemplace por el número de identidad.
   - Curl: http://localhost:8080/api/{identificacion}/numerodeidentidad
 2. Busqueda por nombre: {nombreCliente} reemplace por el nombre del cliente.
   - Curl: http://localhost:8080/api/{nombreCliente}/nombre
 
   # Petición PUT cliente
-  Para iniciar una petición **PUT** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+  Para iniciar una petición **PUT** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
 
    - Curl: http://localhost:8080/api/cliente
   **BODY JSON**
@@ -80,13 +80,13 @@ Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authoriza
 
 
   # Petición DELETE cliente
-   Para iniciar una petición **DELETE** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente. Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+   Para iniciar una petición **DELETE** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente. Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
 
 Reemplace {idCliente} por el Integer clave primaria.
   - Curl: http://localhost:8080/api/cliente/{idCliente}
 
 # Petición POST Sucursal - Cliente
- Para iniciar una petición **PUT** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+ Para iniciar una petición **PUT** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
 
 Reemplace {idCliente} por el Integer clave primaria.
  - Curl: http://localhost:8080/api/sucursal/{idCliente}
@@ -101,7 +101,7 @@ Reemplace {idCliente} por el Integer clave primaria.
 
 
 # Petición GET Sucursal por Cliente
- Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente. Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json. 
+ Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente. Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json. 
 
  Reemplace {idCliente} por el Integer clave primaria.
  - Curl: http://localhost:8080/api/sucursal/{idCliente}
