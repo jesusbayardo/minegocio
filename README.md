@@ -17,7 +17,7 @@
 **Maven 3.x** [enter link description here](https://maven.apache.org/download.cgi#Installation)
 
 
-
+**Realice la configuración de las variables de entorno de MAIVEN Y JDK**
 
 # Git Repository
 - Abrir una terminal CDM en cualquier parte del escritorio deL ORDENADOR y ejecutar el siguiente comando para descargar el project.
@@ -26,10 +26,17 @@ git clone https://github.com/jesusbayardo/minegocio.git
 
 El project esta en la branch main.
 
+
+# Script base de datos PG
+
+La base de datos es creada en Postgresql,  en el project existe la carpeta bd_script, en la cuál se encuentra el script sql.
+
+Para crear la base de datos, se debe ejecutar PGADMIN y crear una base de datos con el nombre **prueba_png**, despliegue una consola y ejecute el script.
+
 # mvn clean install
 Para crear el jar y ejecutar el backend con docker compose ejecute el siguiente comando CMD dentro del project descargado:
 
- mvn clean install
+ **mvn clean install**
 
 # Ejecutar la aplicación en Docker Desktop
 
@@ -46,7 +53,12 @@ Espere que se levante el project BACK-END y la BASE DE DATOS.
 
  Obtenga el token para iniciar pruebas.
   - Ejecute una peticion POST: http://localhost:8080/oauth/token
-  - Ingrese las credenciales para conectar al backend. En POSTMAN en la pestaña **Authorization** seleccione el  **Type**: Basic Auth e ingrese **UserName**: angularapp y **Password**: 12345
+  - Ingrese las credenciales para conectar al backend. En POSTMAN en la pestaña **Authorization** seleccione el  **Type**: Basic Auth e ingrese
+  
+   **UserName**: angularapp y 
+   
+   **Password**: 12345
+
   - En POSTMAN en la pestaña **Body** ingrese las KEY y sus VALUE respectivos.
     - username=bayardo
     - password=12345
