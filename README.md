@@ -20,7 +20,7 @@
 **Realice la configuración de las variables de entorno de MAIVEN Y JDK**
 
 # Git Repository
-- Abrir una terminal CDM en cualquier parte del escritorio deL ORDENADOR y ejecutar el siguiente comando para descargar el project.
+- Abrir una terminal CDM en cualquier parte del escritorio del ORDENADOR y ejecutar el siguiente comando para descargar el project.
 
 git clone https://github.com/jesusbayardo/minegocio.git
 
@@ -34,7 +34,7 @@ La base de datos es creada en Postgresql,  en el project existe la carpeta bd_sc
 Para crear la base de datos, se debe ejecutar PGADMIN y crear una base de datos con el nombre **prueba_png**, despliegue una consola y ejecute el script.
 
 # mvn clean install
-Para crear el jar y ejecutar el backend con docker compose ejecute el siguiente comando CMD dentro del project descargado:
+Para crear el jar ejecute el siguiente comando CMD dentro del project descargado:
 
  **mvn clean install**
 
@@ -52,7 +52,7 @@ Espere que se levante el project BACK-END y la BASE DE DATOS.
 # Iniciar pruebas en postman
 
  Obtenga el token para iniciar pruebas.
-  - Ejecute una peticion POST: http://localhost:8080/oauth/token
+  - Ejecute una petición POST: http://localhost:8080/oauth/token
   - Ingrese las credenciales para conectar al backend. En POSTMAN en la pestaña **Authorization** seleccione el  **Type**: Basic Auth e ingrese
   
    **UserName**: angularapp y 
@@ -70,6 +70,7 @@ Espere que se levante el project BACK-END y la BASE DE DATOS.
 # Petición POST cliente
 Para iniciar una petición **POST** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pege el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
   - Curl: http://localhost:8080/api/cliente
+  
    **BODY JSON**
 
 {
@@ -86,6 +87,7 @@ Para iniciar una petición **POST** dirigase en Postman a la pestaña **Authoriz
 
 # Petición GET cliente
 Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
+
 1. Busqueda por número de identidad: {identificacion} reemplace por el número de identidad.
   - Curl: http://localhost:8080/api/{identificacion}/numerodeidentidad
 2. Busqueda por nombre: {nombreCliente} reemplace por el nombre del cliente.
@@ -95,6 +97,7 @@ Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authoriza
   Para iniciar una petición **PUT** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
 
    - Curl: http://localhost:8080/api/cliente
+
   **BODY JSON**
 
    {
