@@ -1,0 +1,36 @@
+version: '3'
+
+networks:
+  webapp:
+services:
+  db:
+    image: postgres:14.7
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: prueba_png
+    volumes:           
+          - ./bd_script/base_datos.sql:/docker-entrypoint-initdb.d/base_datos.sql
+    ports:
+          - "5432:5432"
+    networks:
+          - webapp
+
+
+  app:
+    build: .
+    restart: always
+    depends_on:
+          - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/prueba_png
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+          - "8080:8080"
+    
+    networks:
+          - webapp
+
+ 

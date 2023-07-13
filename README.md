@@ -1,57 +1,107 @@
-# Requirements
+# Requerimientos
 
 **Docker-Desktop** [enter link description here](https://www.docker.com/products/docker-desktop/)
-**Git**  [enter link description here](https://git-scm.com/downloads)
-**NodeJS 16**  [enter link description here](https://nodejs.org/en/blog/release/v16.16.0)
-**PostgreSQL 14.7** [enter link description here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
-**Eclipse IDE** [enter link description here](https://www.eclipse.org/downloads/)
-**jdk 11** [enter link description here](https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html)
-**Maven 3.x** [enter link description here](https://maven.apache.org/download.cgi#Installation)
 
-**IMPORTANT** Perform the configuration of the jdk and maiven environment variables.
+**Postman** [enter link description here](https://www.postman.com/downloads/)
+
+**Git**  [enter link description here](https://git-scm.com/downloads)
+
 
 
 # Git Repository
-Run in terminal CMD to  download the project.
+- Abrir una terminal CDM en cualquier parte y ejecutar el siguiente comando para descargar el project.
 
-git clone https://gitlab.com/28abril2023consulti/bayardo-chandi.git -b bchandi_netflixV2  --single-branch
+https://github.com/jesusbayardo/minegocio.git
 
-open the project in the BACKEND folder.
+El project esta en la branch main.
 
 
-# Running the application locally-dev
+# Ejecutar la aplicación en Docker Desktop
 
- 1. Run eclipseIDE.
+ 1. Inicie docker desktop **Importante**
+ 2. Dirigase al proyecto descargado de GitHub e ingrese a la carpeta raiz.
+ 3. Abra un CMD.
+ 4. Ejecute el comando: **docker compose up** 
 
- 2. Import the project.(FILE-> Open projects from file system ->Directoty)
-
- 3. Search the project and press on Finish.
-
- 4. Create the database connection
-
- 5. Run pgADMIN
-
- 6. Create a database named: prueba_ar
-
- 7. Run the database script SQL in the console, it is in the  folder: bd
-
- 8. create a new connection between the project and the database
-
- 8. Right click on top of the project and run AS -> SPRING BOOT APP
-
- 9. Open http://localhost:8080
- 
+Espere que se levante el proyecto BACK-END y la BASE DE DATOS.
 
 
 
+# Iniciar pruebas en postman
 
-# Running the application docker
+ Obtenga el token para iniciar pruebas.
+  - Ejecute una peticion POST: http://localhost:8080/oauth/token
+  - Ingrese las credenciales para conectar al backend. En POSTMAN en la pestaña **Authorization** seleccione el  **Type**: Basic Auth e ingrese **UserName**: angularapp y **Password**: 12345
+  - En POSTMAN en la pestaña **Body** ingrese las KEY y sus VALUE respectivos.
+    - username=bayardo
+    - password=12345
+    - grant_type=password
+  - Luego precione en **Send** para obtener el TOKEN.
 
- 1. Start docker desktop **Important**
- 2. Open the terminal and go to the root directory where docker-compose.yml is located and run the following command.
- 3. Execute: **mvn clean install**
- 4. Execute: **docker-compose up** 
 
-After running the above steps without any errors and docker containers are up and running, url: http://localhost:8080
 
-"# minegocio" 
+# Petición POST cliente
+Para iniciar una petición **POST** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pege el token obtenido anteriormente.  Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+  - Curl: http://localhost:8080/api/cliente
+   **BODY JSON**
+
+{
+"correocliente": "homeroluis@gmail.com",
+"nombrescliente":"bayardo",
+"numeroIdentificacioncliente":"0401685990001",
+"tipoIdentificacioncliente":"RUC",
+"ciudadsucursal":"QUITO",
+"direccionsucursal":"OLIVOS",
+"provinciasucursal":"IMBABURA"
+}
+
+
+
+# Petición GET cliente
+Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+1. Busqueda por número de identidad: {identificacion} reemplace por el número de identidad.
+  - Curl: http://localhost:8080/api/{identificacion}/numerodeidentidad
+2. Busqueda por nombre: {nombreCliente} reemplace por el nombre del cliente.
+  - Curl: http://localhost:8080/api/{nombreCliente}/nombre
+
+  # Petición PUT cliente
+  Para iniciar una petición **PUT** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+
+   - Curl: http://localhost:8080/api/cliente
+  **BODY JSON**
+
+   {
+            "idCliente": 1,
+            "correo": "homeroluis@gmail.com",
+            "nombres": "bayardo j",
+            "numeroIdentificacion": "0401685990001",
+            "tipoIdentificacion": "RUC"
+        }
+
+
+  # Petición DELETE cliente
+   Para iniciar una petición **DELETE** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente. Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+
+Reemplace {idCliente} por el Integer clave primaria.
+  - Curl: http://localhost:8080/api/cliente/{idCliente}
+
+# Petición POST Sucursal - Cliente
+ Para iniciar una petición **PUT** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json.
+
+Reemplace {idCliente} por el Integer clave primaria.
+ - Curl: http://localhost:8080/api/sucursal/{idCliente}
+
+  **BODY JSON**
+
+{
+     "ciudad": "boliar",
+     "direccion": "OLIVOS 12",
+      "provincia": "IMBABURA"
+ }
+
+
+# Petición GET Sucursal por Cliente
+ Para iniciar una petición **GET** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente. Además en la pestaña **Headers** envie como **Key**: Content-Type y **Value**: application/json. 
+
+ Reemplace {idCliente} por el Integer clave primaria.
+ - Curl: http://localhost:8080/api/sucursal/{idCliente}
