@@ -6,20 +6,33 @@
 
 **Git**  [enter link description here](https://git-scm.com/downloads)
 
+**NodeJS 16**  [enter link description here](https://nodejs.org/en/blog/release/v16.16.0)
+
+**PostgreSQL 14.7** [enter link description here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+
+**Eclipse IDE** [enter link description here](https://www.eclipse.org/downloads/)
+
+**jdk 11** [enter link description here](https://www.oracle.com/es/java/technologies/javase/jdk11-archive-downloads.html)
+
+**Maven 3.x** [enter link description here](https://maven.apache.org/download.cgi#Installation)
+
+
 
 
 # Git Repository
-- Abrir una terminal CDM en cualquier parte y ejecutar el siguiente comando para descargar el project.
+- Abrir una terminal CDM en cualquier parte del escritorio deL ORDENADOR y ejecutar el siguiente comando para descargar el project.
 
-https://github.com/jesusbayardo/minegocio.git
+git clone https://github.com/jesusbayardo/minegocio.git
 
 El project esta en la branch main.
 
+# mvn clean install
+Para crear el jar y ejecutar la docker compose ejecute el siguiente comando dentro del project descargado: mvn clean install
 
 # Ejecutar la aplicación en Docker Desktop
 
- 1. Inicie docker desktop **Importante**
- 2. Dirigase al proyecto descargado de GitHub e ingrese a la carpeta raíz.
+ 1. Inicie la aplicación docker desktop **Importante**
+ 2. Dirigase al proyecto descargado de GitHub e ingrese a la carpeta raiz.
  3. Abra un CMD.
  4. Ejecute el comando: **docker compose up** 
 
@@ -36,12 +49,12 @@ Espere que se levante el proyecto BACK-END y la BASE DE DATOS.
     - username=bayardo
     - password=12345
     - grant_type=password
-  - Luego presione en **Send** para obtener el TOKEN.
+  - Luego precione en **Send** para obtener el TOKEN.
 
 
 
 # Petición POST cliente
-Para iniciar una petición **POST** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pegué el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
+Para iniciar una petición **POST** dirigase en Postman a la pestaña **Authorization** y seleccione el **Type**: Bear Token y en el apartado pege el token obtenido anteriormente.  Además en la pestaña **Headers** envíe como **Key**: Content-Type y **Value**: application/json.
   - Curl: http://localhost:8080/api/cliente
    **BODY JSON**
 
