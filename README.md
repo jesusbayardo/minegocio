@@ -27,7 +27,9 @@ git clone https://github.com/jesusbayardo/minegocio.git
 El project esta en la branch main.
 
 # mvn clean install
-Para crear el jar y ejecutar la docker compose ejecute el siguiente comando dentro del project descargado: mvn clean install
+Para crear el jar y ejecutar el backend con docker compose ejecute el siguiente comando CMD dentro del project descargado:
+
+ mvn clean install
 
 # Ejecutar la aplicación en Docker Desktop
 
