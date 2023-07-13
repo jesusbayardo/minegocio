@@ -32,11 +32,11 @@ Para crear el jar y ejecutar la docker compose ejecute el siguiente comando dent
 # Ejecutar la aplicación en Docker Desktop
 
  1. Inicie la aplicación docker desktop **Importante**
- 2. Dirigase al proyecto descargado de GitHub e ingrese a la carpeta raiz.
+ 2. Dirigase al project descargado de GitHub e ingrese a la carpeta raiz.
  3. Abra un CMD.
  4. Ejecute el comando: **docker compose up** 
 
-Espere que se levante el proyecto BACK-END y la BASE DE DATOS.
+Espere que se levante el project BACK-END y la BASE DE DATOS.
 
 
 
@@ -49,7 +49,7 @@ Espere que se levante el proyecto BACK-END y la BASE DE DATOS.
     - username=bayardo
     - password=12345
     - grant_type=password
-  - Luego precione en **Send** para obtener el TOKEN.
+  - Luego presione en **Send** para obtener el TOKEN.
 
 
 
